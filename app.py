@@ -11,7 +11,9 @@ app = FastAPI()
 # Get allowed origins from environment or use defaults
 allowed_origins = os.getenv(
     "ALLOWED_ORIGINS",
-    "http://localhost:3000,https://legal-ai-pack.vercel.app"
+    "https://legal-ai-pack.vercel.app,"
+    "https://legal-ai-git-main-tobaisfires-projects.vercel.app","https://legal-q2avdt00w-tobaisfires-projects.vercel.app","http://localhost:3000,
+    
 ).split(",")
 
 # Enable CORS
