@@ -9,12 +9,15 @@ from source.summarizer import legal_sys, calculate_optimal_summary
 app = FastAPI()
 
 # Get allowed origins from environment or use defaults
-
+allowed_origins = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:3000,https://legal-ai-pack.vercel.app"
+).split(",")
 
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://legal-ai-pack.vercel.app/"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
